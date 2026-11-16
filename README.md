@@ -14,4 +14,5 @@ shell into its folder.
 
 hib is written in Python 3, uses the standard library only (the optional Word to
 PDF conversion excepted) and needs no installer.
+
 !!!Entirely coded by Claude IA!!!
