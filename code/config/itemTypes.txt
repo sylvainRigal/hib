@@ -1,0 +1,44 @@
+# hib item types - one canonical identifier per line.
+# Lines starting with '#' are comments; blank lines are ignored.
+# The "Item type" prompt is free text and matches these case-insensitively;
+# type "?" at that prompt to list them, or pick by number. Edit this file to
+# add your own types (one per line); hib rereads it on every run.
+artwork
+audioRecording
+bill
+blogPost
+book
+bookSection
+case
+computerProgram
+conferencePaper
+dataset
+dictionaryEntry
+document
+email
+encyclopediaArticle
+film
+forumPost
+hearing
+instantMessage
+interview
+journalArticle
+letter
+magazineArticle
+manuscript
+map
+newspaperArticle
+patent
+podcast
+preprint
+presentation
+radioBroadcast
+report
+standard
+statute
+thesis
+tvBroadcast
+videoRecording
+webpage
+script
+procedure

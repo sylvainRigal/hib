@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[co]
+
+# PyInstaller (build_exe.py): the .exe is a rebuildable snapshot, not a source
+code/bin/
+code/build/
+*.spec
+
+# Personal configuration: machine-specific paths, never published.
+# Start from code/config/config.example.toml instead.
+code/config/config.toml
+code/config/pathToFilesLocation.txt
+
+# Local working files and test data
+prompt.txt
+testdatabase/
+*.log
+

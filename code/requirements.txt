@@ -1,0 +1,11 @@
+# Word -> PDF conversion is done in Python first; a declared external converter
+# (pandoc, soffice, ...) is only an optional fallback (see README).
+# docx2pdf drives an installed Microsoft Word: win32com on Windows, JXA on macOS.
+# It pulls in pywin32 (Windows) / appscript (macOS) and tqdm by itself.
+#
+#     py -3 -m pip install -r requirements.txt
+#
+# Everything else in hib is stdlib-only; without this package `hib add` / `hib pdf`
+# simply skip the PDF ("skipped (docx2pdf is not installed ...)") instead of
+# failing, unless a fallback converter is declared.
+docx2pdf>=0.1.8

@@ -1,0 +1,44 @@
+# hib configuration -- a generic example. Copy it and fill in your own paths.
+#
+# Where hib reads it:
+#   * %LOCALAPPDATA%\hib\config\config.toml   (default; created as an empty
+#     template on the first run if it does not exist), or
+#   * the file named by the HIB_CONFIG environment variable.
+# itemTypes.txt is read from the same folder.
+#
+# Single-quoted '...' literal strings keep Windows backslashes as-is, so write
+# paths exactly as Explorer shows them. Storage and backup paths are taken
+# literally (no %VARS% expansion).
+
+[storage]
+file  = 'C:\hib\files'   # stored copies: one randomly named folder per entry
+html  = 'C:\hib\html'    # the HTML cards
+json  = 'C:\hib\json'    # the per-entry JSON metadata
+# trash = 'C:\hib\trash' # optional; where `hib delete` / `hib purge` move things.
+                         # Defaults to <file>\trash.
+
+[backup]
+# Default destination of `hib backup` (a folder given on the command line
+# overrides it). Must not be inside, or contain, a storage folder.
+target = 'D:\hib-backup'
+
+[pdf]
+# Word -> PDF is done in Python (docx2pdf, which drives an installed Microsoft
+# Word). When that produces no PDF, hib can fall back to an external converter
+# (pandoc, soffice, ...). fallback_config names the file that declares it;
+# %VARS% are expanded.
+#
+# NOTE: this one key is read from code\config\config.toml (next to the sources,
+# or config\config.toml next to hib.exe), not from the main config above. If
+# it is absent, the same default path is used.
+fallback_config = '%LOCALAPPDATA%\hib\config.toml'
+#
+# That fallback file contains, for example:
+#
+#     [pdf]
+#     converter = 'C:\Program Files\Pandoc\pandoc.exe'
+#     args      = '{input} -o {output}'   # optional; inferred for pandoc/soffice
+#     # or the whole command line in one string:
+#     # cmd = '"C:\Program Files\LibreOffice\program\soffice.exe" --headless --convert-to pdf --outdir {outdir} {input}'
+#
+# No such file, or no converter in it -> no fallback (hib just skips the PDF).
